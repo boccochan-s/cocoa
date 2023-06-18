@@ -1,9 +1,11 @@
 version: '3'
 services:
-  rust:
-    image: rust:alpine3.17
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
     volumes:
-      - .:/cocoa
-    working_dir: /cocoa
-    environment:
-      - USER=user
+      - ./src:/src
+    ports:
+      - 3000:3000
+    tty: true
