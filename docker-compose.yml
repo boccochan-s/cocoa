@@ -1,0 +1,9 @@
+version: '3'
+services:
+  rust:
+    image: rust:alpine3.17
+    volumes:
+      - .:/cocoa
+    working_dir: /cocoa
+    environment:
+      - USER=user
