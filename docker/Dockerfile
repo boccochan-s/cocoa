@@ -5,7 +5,8 @@ COPY ./src/ ./src/
 
 WORKDIR /src
 
-RUN apk add npm curl
-RUN npm install
+RUN apk add npm curl && \
+    npm install && \
+    npm install -g ngrok
 
 EXPOSE 3000
