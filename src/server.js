@@ -10,6 +10,7 @@ const config = {
 };
 
 const app = express();
+app.get('/', (req, res) => res.send('WELCOME TO COCOA LINEBOT!'));
 app.post('/webhook', line.middleware(config), (req, res) => {
   Promise
     .all(req.body.events.map(handleEvent))
